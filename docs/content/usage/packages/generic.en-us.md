@@ -32,10 +32,12 @@ PUT https://gitea.example.com/api/packages/{owner}/generic/{package_name}/{packa
 
 | Parameter         | Description |
 | ----------------- | ----------- |
-| `owner`           | The owner of the package. |
+| `owner`           | The owner of the package. This can be a username or organization name. |
 | `package_name`    | The package name. It can contain only lowercase letters (`a-z`), uppercase letter (`A-Z`), numbers (`0-9`), dots (`.`), hyphens (`-`), pluses (`+`), or underscores (`_`). |
 | `package_version` | The package version, a non-empty string without trailing or leading whitespaces. |
 | `file_name`       | The filename. It can contain only lowercase letters (`a-z`), uppercase letter (`A-Z`), numbers (`0-9`), dots (`.`), hyphens (`-`), pluses (`+`), or underscores (`_`). |
+
+If an organization name is used for the owner, it is possible to link the package to a specific repository. This way it will appear in the list of packages for the repository. Do this by choosing 'settings' for the desired package in the organization packages view and selecting the repository to link it to.
 
 Example request using HTTP Basic authentication:
 
